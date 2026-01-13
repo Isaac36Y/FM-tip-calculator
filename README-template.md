@@ -4,6 +4,7 @@ This is a solution to the [Tip calculator app challenge on Frontend Mentor](http
 
 ## Table of contents
 
+- [Questions](#questions)
 - [Overview](#overview)
   - [The challenge](#the-challenge)
   - [Screenshot](#screenshot)
@@ -16,7 +17,10 @@ This is a solution to the [Tip calculator app challenge on Frontend Mentor](http
 - [Author](#author)
 - [Acknowledgments](#acknowledgments)
 
-**Note: Delete this note and update the table of contents based on what sections you keep.**
+## Questions 
+
+-is using the many h1 elements a problem? I felt each h1 is important to getting through the calculator for an accurate output. The h2s used for the ammounts was used because I thought a screen reader would get to the section and read <h1>Tip amount<> then right after <h2>amount output<> is this the correct way of thinking with headers?
+
 
 ## Overview
 
@@ -42,10 +46,13 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+
 
 ## My process
+
+-still learning the best way to write html and css. Taking the proccess of html slowly to make sure I practice good html for easy walk navigations through website
+-also taking my time with the css. not throwing styling around and forcing everything to look exactly how I want but doing minimal styling and let the browser help to make it as responsive as possible. clean media querys as well. I dont want to right a completely new style in the media query rather change a few styles to make it responsive 
+
 
 ### Built with
 
