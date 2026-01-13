@@ -3,6 +3,14 @@
   padding: 0;
 }
 
+@font-face {
+  font-display: swap;
+  font-family: 'Space Mono';
+  font-style: normal;
+  font-weight: 700;
+  src: url('./design/space-mono-v17-latin-700.woff2') format('woff2');
+}
+
 *:not(dialog) {
   margin: 0;
 }
@@ -15,6 +23,8 @@
 body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
+  font-family: 'Space Mono', Arial, Helvetica, sans-serif;
+  background-color: var(--grey200);
 }
 
 img, picture, video, canvas, svg {
@@ -35,4 +45,123 @@ p {
 }
 h1, h2, h3, h4, h5, h6 {
   text-wrap: balance;
+}
+
+:root {
+    --green900: rgb(0, 73, 77);
+    --green400: rgb(38, 192, 171);
+    --grey500: rgb(94, 122, 125);
+    --grey400: rgb(127, 155, 159);
+    --grey200: rgb(197, 228, 231);
+    --grey50: rgb(244, 250, 251);
+    --hover: rgb(159, 232, 223);
+    --white: rgb(255, 255, 255);
+    --labelSz: 1rem;
+    --inputSz: 1.5rem;
+    --outputAmount: 2rem;
+    --btnSz: 0.3rem;
+}
+
+.logo {
+    margin-inline: auto;
+    padding-block: 3rem 2rem
+}
+
+.container {
+    background-color: var(--white);
+    padding: 1.5rem 2rem 2rem 2rem;
+    border-radius: 1rem;
+    display: flex; 
+    flex-direction: column;
+}
+
+.label {
+    font-size: var(--labelSz);
+    color: var(--grey500);
+    padding-block: 0.5rem;
+}
+
+/* inputs */
+.bill__input, .people__input, .tip__input {
+    background-color: var(--grey50);
+    text-align: end;
+    width: 100%;
+}
+.bill__input, .people__input {
+    background-repeat: no-repeat;
+    background-position: 1rem 50%;
+}
+.bill__input {
+    background-image: url(./images/icon-dollar.svg);
+}
+.people__input {
+    background-image: url(./images/icon-person.svg);
+}
+
+.input__bill, .input__tip, .input__people {
+    padding-block-end: 1.5rem;
+}
+
+/* tip selectors */ 
+input, .tip__selector > * {
+    font-size: var(--inputSz);
+    padding: 0.3rem 1rem;
+    border-radius: var(--btnSz);
+    border: transparent
+}
+
+.tip__selector {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.tip__button {
+    background-color: var(--green900);
+    color: var(--white)
+}
+
+.tip__button:hover {
+    background-color: var(--hover);
+    color: var(--green900)
+}
+
+/* output */ 
+
+.output {
+    background-color: var(--green900);
+    border-radius: 1rem;
+    padding: 2rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.output__tip, .output__total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.output__description {
+    font-size: var(--labelSz);
+    color: var(--white);
+    line-height: 1.2;
+}
+.weak {
+    font-size: 0.8rem;
+    color: var(--grey400)
+}
+.output__amount {
+    font-size: var(--outputAmount);
+    color: var(--green400);
+}
+
+.reset__button {
+    font-size: var(--inputSz);
+    padding-block: var(--btnSz);
+    border-radius: var(--btnSz);
+    border: transparent;
+    color: var(--green900);
+    background-color: var(--grey500);
 }

@@ -4,51 +4,55 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+  <link rel="stylesheet" href="">
   <link rel="stylesheet" href="style.css">
   <title>Frontend Mentor | Tip calculator app</title>
 </head>
 <body>
-
+  <img src="./images/logo.svg" alt="" class="logo">
   <main>
     <div class="container">
-      <section class="bill__container">
-        <h1 class="label">
-          <label class="bill__label" for="bill-input">Bill</label> <!-- I want these to be headers. Is putting the three labels in headers functional? also should the all be h1 or not?-->
-        </h1>
-        <input type="number" class="bill__input" id="bill-input" name="bill" placeholder="0" aria-label="enter total bill">
+      <section class="input">
+        <div class="input__bill">
+          <h1 class="label">
+            <label class="bill__label" for="bill-input">Bill</label> <!-- I want these to be headers. Is putting the three labels in headers functional? also should the all be h1 or not?-->
+          </h1>
+          <input type="number" class="bill__input" id="bill-input" name="bill" placeholder="0" aria-label="enter total bill">
+        </div>
+        <div class="input__tip">
+          <h1 class="label">
+            <label for="tip-amount" class="tip__label">Select Tip %</label>
+          </h1>
+          <div class="tip__selector">
+            <button type="button" class="tip__button" id="tip-amount" aria-checked="false">5%</button>
+            <button type="button" class="tip__button" id="tip-amount" aria-checked="false">10%</button>
+            <button type="button" class="tip__button" id="tip-amount" aria-checked="false">15%</button>
+            <button type="button" class="tip__button" id="tip-amount" aria-checked="false">25%</button>  <!-- all buttons and input have same id so the label is for all of them? -->
+            <button type="button" class="tip__button" id="tip-amount" aria-checked="false">50%</button>  <!-- is this a good way to use aria-checked? cutom input shouldnt need anything since it would be read as empty? -->
+            <input type="number" class="tip__input" id="tip-amount" name="tip" placeholder="Custom" aria-label="enter a custom tip percentage">
+          </div>
+        </div>
+        <div class="input__people">
+          <h1 class="label">
+            <label for="people-input" class="people__label">Number of People</label>
+          </h1>
+          <input type="number" class="people__input" id="people-input" placeholder="0" aria-label="enter number of people paying">
+        </div>
       </section>
-      <section class="tip__container">
-        <h1 class="label">
-          <label for="tip-amount" class="tip__label">Select Tip %</label>
-        </h1>
-        <button class="tip__button" id="tip-amount">5%</button>
-        <button class="tip__button" id="tip-amount">10%</button>
-        <button class="tip__button" id="tip-amount">15%</button>
-        <button class="tip__button" id="tip-amount">25%</button>  <!-- all buttons and input have same id so the label is for all of them? -->
-        <button class="tip__button" id="tip-amount">50%</button>
-        <input type="number" class="tip__custom" id="tip-amount" name="tip" placeholder="CUSTOM" aria-label="enter a custom tip percentage">
-      </section>
-      <section class="people__container">
-        <h1 class="label">
-          <label for="people-input" class="people__label">Number of People</label>
-        </h1>
-        <input type="number" class="people__input" id="people-input" placeholder="0" aria-label="enter number of people paying">
-      </section>
-      <section class="output__container">
+      <section class="output">
         <div class="output__tip">
           <h1 class="output__description">
             Tip Amount<br>
             <span class="weak">/ person</span>
           </h1>
-          <h2 class="output__amount" id="total-tip-per-person"></h2>
+          <h2 class="output__amount" id="total-tip-per-person">$0.00</h2>
         </div>
         <div class="output__total">
           <h1 class="output__description">
             Total<br>
             <span class="weak">/ person</span>
           </h1>
-          <h2 class="output__amount" id="total-cost-per-person"></h2>
+          <h2 class="output__amount" id="total-cost-per-person">$0.00</h2>
         </div>
         <button class="reset__button" id="reset-button">Reset</button>
       </section>
