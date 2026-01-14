@@ -179,7 +179,7 @@ input, .tip__selector > * {
     background-color: var(--green400);
 }
 
-[aria-checked="true"] { 
+[aria-pressed="true"] { 
     background-color: var(--green400);
     color: var(--green900)
 }

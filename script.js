@@ -9,7 +9,7 @@ const resetBtn = document.querySelector("#reset-button")
 
 let tipSelected = null
 const parsePercent = (str) => {
-    if (str == null || str === "") return null;
+    if (str === null || str === "") return null;
     const aStr = String(str).trim();
     if (aStr.endsWith("%")) return parseFloat(aStr.replace("%", ""))
     return parseFloat(aStr)
@@ -26,8 +26,10 @@ const reset = () => {
     billInput.value = "";
     numOfPeople.value = "";
     customTip.value = ""
-    tipAmount.forEach(btn => btn.ariaChecked = "false")
+    tipAmount.forEach(btn => btn.setAttribute("aria-pressed", "false"))
     resetBtn.classList.remove("select")
+    totalTip.textContent = "$0.00"
+    totalPerson.textContent = "$0.00"
 }
 
 const updateTotals = () => {
@@ -35,7 +37,7 @@ const updateTotals = () => {
     const people = parseInt(numOfPeople.value);
     const percent = parsePercent(tipSelected)
     activateReset()
-    if (!people >= 1 || !bill) {
+    if (!people || !bill) {
         totalTip.textContent = "$0.00"
         totalPerson.textContent = "$0.00"
         return
@@ -52,12 +54,12 @@ const updateTotals = () => {
 
 tipAmount.forEach(btn => 
     btn.addEventListener("click", () => {
-    if (btn.ariaChecked === "true") {
-        btn.ariaChecked = "false"
+    if (btn.getAttribute("aria-pressed") === "true") {
+        btn.setAttribute("aria-pressed", "false")
         tipSelected = null
     }else{
-       tipAmount.forEach(b => b.ariaChecked = "false") 
-       btn.ariaChecked = "true"
+       tipAmount.forEach(b => b.setAttribute("aria-pressed", "false")) 
+       btn.setAttribute("aria-pressed", "true")
        tipSelected = parsePercent(btn.textContent)
        if (customTip) customTip.value = ""
        activateReset()
@@ -71,7 +73,7 @@ tipAmount.forEach(btn =>
  
 if (customTip ) {
     customTip.addEventListener("input", () => {
-    tipAmount.forEach(btn => btn.ariaChecked = "false")
+    tipAmount.forEach(btn => btn.setAttribute("aria-pressed", "false"))
     tipSelected = parsePercent(customTip.value)
     if (billInput.value && numOfPeople.value >= 1) {
          updateTotals()

@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  <link rel="stylesheet" href="">
   <link rel="stylesheet" href="style.css">
   <title>Frontend Mentor | Tip calculator app</title>
 </head>
@@ -24,12 +23,12 @@
             <label for="tip-amount" class="tip__label">Select Tip %</label>
           </h1>
           <div class="tip__selector">
-            <button type="button" class="tip__button" id="tip-amount" aria-checked="false">5%</button>
-            <button type="button" class="tip__button" id="tip-amount" aria-checked="false">10%</button><!-- all buttons and input have same id so the label is for all of them? -->
-            <button type="button" class="tip__button" id="tip-amount" aria-checked="false">15%</button>
+            <button type="button" class="tip__button" id="tip-amount" aria-pressed="false">5%</button>
+            <button type="button" class="tip__button" id="tip-amount" aria-pressed="false">10%</button><!-- all buttons and input have same id so the label is for all of them? -->
+            <button type="button" class="tip__button" id="tip-amount" aria-pressed="false">15%</button>
             <!-- is this a good way to use aria-checked? cutom input shouldnt need anything since it would be read as empty? -->
-            <button type="button" class="tip__button" id="tip-amount" aria-checked="false">25%</button>  
-            <button type="button" class="tip__button" id="tip-amount" aria-checked="false">50%</button>  
+            <button type="button" class="tip__button" id="tip-amount" aria-pressed="false">25%</button>  
+            <button type="button" class="tip__button" id="tip-amount" aria-pressed="false">50%</button>  
             <input type="number" class="tip__input" id="tip-amount" name="tip" placeholder="Custom" aria-label="enter a custom tip percentage">
           </div>
         </div>
@@ -55,7 +54,7 @@
           </h1>
           <h2 class="output__amount" id="total-cost-per-person">$0.00</h2>
         </div>
-        <button class="reset__button" id="reset-button">Reset</button>
+        <button class="reset__button" id="reset-button" type="button">Reset</button>
       </section>
     </div>
   </main>
