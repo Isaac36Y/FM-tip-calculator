@@ -25,10 +25,11 @@
           </h1>
           <div class="tip__selector">
             <button type="button" class="tip__button" id="tip-amount" aria-checked="false">5%</button>
-            <button type="button" class="tip__button" id="tip-amount" aria-checked="false">10%</button>
+            <button type="button" class="tip__button" id="tip-amount" aria-checked="false">10%</button><!-- all buttons and input have same id so the label is for all of them? -->
             <button type="button" class="tip__button" id="tip-amount" aria-checked="false">15%</button>
-            <button type="button" class="tip__button" id="tip-amount" aria-checked="false">25%</button>  <!-- all buttons and input have same id so the label is for all of them? -->
-            <button type="button" class="tip__button" id="tip-amount" aria-checked="false">50%</button>  <!-- is this a good way to use aria-checked? cutom input shouldnt need anything since it would be read as empty? -->
+            <!-- is this a good way to use aria-checked? cutom input shouldnt need anything since it would be read as empty? -->
+            <button type="button" class="tip__button" id="tip-amount" aria-checked="false">25%</button>  
+            <button type="button" class="tip__button" id="tip-amount" aria-checked="false">50%</button>  
             <input type="number" class="tip__input" id="tip-amount" name="tip" placeholder="Custom" aria-label="enter a custom tip percentage">
           </div>
         </div>

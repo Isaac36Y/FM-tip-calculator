@@ -121,10 +121,10 @@ input, .tip__selector > * {
     color: var(--white)
 }
 
-.tip__button:hover {
+/* .tip__button:hover {
     background-color: var(--hover);
     color: var(--green900)
-}
+} */
 
 /* output */ 
 
@@ -164,4 +164,8 @@ input, .tip__selector > * {
     border: transparent;
     color: var(--green900);
     background-color: var(--grey500);
+}
+
+.selected { 
+    background-color: var(--green400);
 }
