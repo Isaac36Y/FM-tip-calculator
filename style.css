@@ -32,6 +32,12 @@ img, picture, video, canvas, svg {
   max-width: 100%;
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 input, button, textarea, select {
   font: inherit;
 }
@@ -69,7 +75,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .container {
     background-color: var(--white);
-    padding: 1.5rem 2rem 2rem 2rem;
+    padding: 1.5rem 2rem 1.5rem 2rem;
     border-radius: 1rem;
     display: flex; 
     flex-direction: column;
@@ -107,13 +113,19 @@ input, .tip__selector > * {
     font-size: var(--inputSz);
     padding: 0.3rem 1rem;
     border-radius: var(--btnSz);
-    border: transparent
+    border: 1px solid transparent
 }
+
 
 .tip__selector {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1rem;
+}
+@media (min-width: 525px) {
+    .tip__selector {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
 }
 
 .tip__button {
@@ -121,10 +133,7 @@ input, .tip__selector > * {
     color: var(--white)
 }
 
-/* .tip__button:hover {
-    background-color: var(--hover);
-    color: var(--green900)
-} */
+
 
 /* output */ 
 
@@ -166,7 +175,49 @@ input, .tip__selector > * {
     background-color: var(--grey500);
 }
 
+.select {
+    background-color: var(--green400);
+}
+
 [aria-checked="true"] { 
     background-color: var(--green400);
     color: var(--green900)
+}
+
+@media (min-width: 770px) {
+    .logo {
+        padding-block: 12vh 8vh
+    }
+    .container {
+        flex-direction: row;
+        gap: 2rem;
+        max-width: 60rem;
+        margin-inline: auto;
+    }
+    .input {
+        width: 50%;
+    }
+    .output {
+        width: 50%;
+        padding-inline: 3rem;
+    }
+    .reset__button {
+        margin-block-start: auto;
+    }
+    .output__amount {
+        font-size: 3rem;
+    }
+    .tip__button:hover {
+    background-color: var(--hover);
+    color: var(--green900);
+    cursor: pointer;
+    }
+    [class~="select"]:hover {
+        background-color: var(--hover);
+        cursor: pointer;
+    }
+    input:hover {
+        cursor: pointer;
+        border: 1px solid var(--green400)
+    }
 }
