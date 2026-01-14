@@ -37,12 +37,12 @@ const updateTotals = () => {
 
 tipAmount.forEach(btn => 
     btn.addEventListener("click", () => {
-    if (btn.classList.contains("selected")) {
-        btn.classList.remove("selected")
+    if (btn.ariaChecked === "true") {
+        btn.ariaChecked = "false"
         tipSelected = null
     }else{
-       tipAmount.forEach(b => b.classList.remove("selected")) 
-       btn.classList.add("selected")
+       tipAmount.forEach(b => b.ariaChecked = "false") 
+       btn.ariaChecked = "true"
        tipSelected = parsePercent(btn.textContent)
        if (customTip) customTip.value = ""
     }
@@ -55,7 +55,7 @@ tipAmount.forEach(btn =>
  
 if (customTip ) {
     customTip.addEventListener("input", () => {
-    tipAmount.forEach(btn => btn.classList.remove("selected"))
+    tipAmount.forEach(btn => btn.ariaChecked = "false")
     tipSelected = parsePercent(customTip.value)
     if (billInput.value && numOfPeople.value >= 1) {
          updateTotals()

@@ -166,6 +166,7 @@ input, .tip__selector > * {
     background-color: var(--grey500);
 }
 
-.selected { 
+[aria-checked="true"] { 
     background-color: var(--green400);
+    color: var(--green900)
 }
